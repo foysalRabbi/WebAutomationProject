@@ -3,35 +3,23 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 public class PageObjectManager {
-
-    public LandingPage landingPage;
-    public OffersPage offersPage;
+    public LoginPage loginPage;
+    public RegisterPage registerPage;
     public WebDriver driver;
-    public CheckoutPage checkoutPage;
-
     public PageObjectManager(WebDriver driver)
     {
         this.driver = driver;
     }
-
-
-
-    public LandingPage getLandingPage()
+    public LoginPage getLoginPage()
     {
-
-        landingPage= new LandingPage(driver);
-        return landingPage;
+        loginPage = new LoginPage(driver);
+        return loginPage;
     }
 
-    public OffersPage OffersPage()
+    public RegisterPage getRegisterPage()
     {
-        offersPage = new OffersPage(driver);
-        return offersPage;
+        registerPage = new RegisterPage(driver);
+        return registerPage;
     }
 
-    public CheckoutPage getCheckoutPage()
-    {
-        checkoutPage = new CheckoutPage(driver);
-        return checkoutPage;
-    }
 }
