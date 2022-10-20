@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 public class PageObjectManager {
     public LoginPage loginPage;
     public RegisterPage registerPage;
+    public CheckoutPage checkoutPage;
     public WebDriver driver;
     public PageObjectManager(WebDriver driver)
     {
@@ -20,6 +21,10 @@ public class PageObjectManager {
     {
         registerPage = new RegisterPage(driver);
         return registerPage;
+    }
+    public CheckoutPage getCheckoutPage(){
+        checkoutPage = new CheckoutPage(driver);
+        return checkoutPage;
     }
 
 }
