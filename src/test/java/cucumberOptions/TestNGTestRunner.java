@@ -8,8 +8,10 @@ import org.testng.annotations.DataProvider;
         features={"src/test/feature"},
         glue ={"stepDefinitions"},
         monochrome=true,
-        tags ="@RegisterTestCase",
-        plugin= {"html:target/cucumber.html", "json:target/cucumber.json"}
+        tags ="@LoginTestCase",
+        plugin= {"html:target/cucumber.html", "json:target/cucumber.json",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+                "rerun:target/failed_scenarios.txt"}
 )
 
 public class TestNGTestRunner extends AbstractTestNGCucumberTests {
