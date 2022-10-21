@@ -1,7 +1,11 @@
 package pageObjects;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class CheckoutPage {
     public WebDriver driver;
@@ -28,7 +32,7 @@ public class CheckoutPage {
     final static By  _faxNumber = By.xpath("//*[@id ='BillingNewAddress_FaxNumber']");
     final static By _AddressContinueBtn = By.xpath("//*[@id='billing-buttons-container']/button[4]");
     final static By _shippingMethodContinueBtn = By.xpath("//*[@id='shipping-method-buttons-container']/button");
-    final static By _moneyOrder = By.xpath("//*[@id='paymentmethod_2']");
+    final static By _moneyOrder = By.xpath("//*[@id='paymentmethod_3']");
     final static By _paymentInformation = By.xpath("//*[@id='payment-info-buttons-container']/button");
     final static By _confirmOrder = By.xpath("//*[@id='confirm-order-buttons-container']/button");
     final static By orderSuccessfulMSG = By.xpath("//strong[contains(text(),'Your order has been successfully processed!')]");
@@ -42,6 +46,12 @@ public class CheckoutPage {
     public void termsConditions(){
        WebElement el = driver.findElement(By.xpath("//*[@id='termsofservice']"));
        el.click();
+    }
+    public void scrollPosition() throws InterruptedException {
+        WebElement viewElement = driver.findElement(By.xpath("//label[contains(text(),'Sub-Total:')]"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", viewElement);
+        Thread.sleep(1000);
     }
     public void checkoutButtonClick(){
         WebElement element = driver.findElement(By.xpath("//*[@id='checkout']"));
@@ -77,15 +87,19 @@ public class CheckoutPage {
         try {
             Select se = new Select(driver.findElement(By.xpath("//*[@id='BillingNewAddress_CountryId']")));
             se.selectByVisibleText(country);
+            Thread.sleep(1000);
         } catch (NoSuchElementException e) {
             System.out.println("Country type " + country + " not found");
             e.printStackTrace();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
 
     }
     public void stateSelect(String state){
         try {
             Select se = new Select(driver.findElement(By.xpath("//*[@id='BillingNewAddress_StateProvinceId']")));
+
             se.selectByVisibleText(state);
         } catch (NoSuchElementException e) {
             System.out.println("State type " + state + " not found");
@@ -116,24 +130,37 @@ public class CheckoutPage {
     public void groundRadioButton(){
         driver.findElement(By.xpath("//*[@id='shippingoption_0']")).click();
     }
-    public void shippingMethodContinueButton(){
-        driver.findElement(_shippingMethodContinueBtn).click();
+    public void shippingMethodContinueButton() throws InterruptedException {
+        Thread.sleep(1000);
+        WebElement el1 = driver.findElement(_shippingMethodContinueBtn);
+        el1.click();
+    }
+    public void moneyOrderButton() throws InterruptedException {
+        Thread.sleep(1000);
+        WebElement el1 = driver.findElement(_moneyOrder);
+        el1.click();
+
+        WebElement viewElement = driver.findElement(By.xpath("//*[@id='paymentmethod_0']"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", viewElement);
 
     }
-    public void moneyOrderButton(){
-        driver.findElement(_moneyOrder).click();
-    }
     public void paymentMethodContinueButton(){
-        driver.findElement(By.xpath("//*[@id='payment-method-buttons-container']/button")).click();
+        WebElement el = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='payment-method-buttons-container']/button")));
+        el.click();
     }
     public void paymentInformationContinueButton(){
-        driver.findElement(_paymentInformation).click();
+        WebElement el = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(_paymentInformation));
+        el.click();
     }
     public void confirmOrderButton(){
-        driver.findElement(_confirmOrder).click();
+        WebElement el = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(_confirmOrder));
+        el.click();
     }
     public String confirmOrderSuccessfulPage(){
-        return driver.findElement(orderSuccessfulMSG).getText();
+        WebElement el = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(orderSuccessfulMSG));
+        return el.getText();
+       // return driver.findElement(orderSuccessfulMSG).getText();
     }
 
 }

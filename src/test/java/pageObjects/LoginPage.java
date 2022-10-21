@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage {
     public WebDriver driver;
@@ -22,7 +26,7 @@ public class LoginPage {
     private final By searchBox = By.xpath("//*[@id='small-searchterms']");
     private final By searchBtnClk = By.xpath("//button[contains(text(),'Search')]");
     private final By addToCartSearch = By.xpath("//a[contains(text(),'White MacBook Pro 13-inch')]");
-    private final By addToDetails = By.xpath("//*[@id='add-to-cart-button-58']");
+    private final By addToDetails = By.xpath("//*[@id='add-to-cart-button-4']");
 
 
     public void loginMenuClick(){
@@ -56,14 +60,22 @@ public class LoginPage {
     public void searchButtonClick(){
         driver.findElement(searchBtnClk).click();
     }
-    public void addToCartButtonClick(){
+    public void addToCartButtonClick() throws InterruptedException {
+        Thread.sleep(1000);
         driver.findElement(addToCartSearch).click();
     }
-    public void addToCartForMiniShoppingCart(){
+    public void productBrandLinkClk() throws InterruptedException {
+        Thread.sleep(1000);
+        driver.findElement(By.linkText("White MacBook Pro 13-inch")).click();
+    }
+    public void addToCartForMiniShoppingCart() throws InterruptedException {
             WebElement element = driver.findElement(addToDetails);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView(true);", element);
-            driver.findElement(addToDetails).click();
+            Thread.sleep(2000);
+            WebElement el = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(addToDetails));
+            el.click();
+            Thread.sleep(2000);
     }
 
 

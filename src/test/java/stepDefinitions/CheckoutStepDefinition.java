@@ -1,8 +1,11 @@
 package stepDefinitions;
 
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
+import com.google.common.base.Verify;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pageObjects.CheckoutPage;
 import utils.TestContextSetup;
 import utils.Xls_Reader;
@@ -18,6 +21,7 @@ public class CheckoutStepDefinition {
 
     Xls_Reader nopData = new Xls_Reader("src/test/resources/TestData/NopTestData.xlsx");
     String checkout ="Checkout_Billing_Address";
+    String allVerification = "NopVerify";
 
     @When("Click on checkout button in my cart page")
     public void click_on_checkout_button_in_my_cart_page() throws Throwable {
@@ -41,8 +45,6 @@ public class CheckoutStepDefinition {
         String zipCode = nopData.getCellData(checkout, "ZipCode", 2).trim();
         String _phoneNumber = nopData.getCellData(checkout, "PhoneNumber", 2).trim();
         String _faxNumber = nopData.getCellData(checkout, "FaxNumber", 2).trim();
-
-
 
         checkoutPage.takeInputBillingAdd("New Address");
         checkoutPage.firstName(firstName);
@@ -81,12 +83,22 @@ public class CheckoutStepDefinition {
 
     @And("click confirm button at confirm order section in checkout page")
     public void click_confirm_button_at_confirm_order_section_in_checkout_page() throws Throwable {
+        Thread.sleep(1000);
+        checkoutPage.scrollPosition();
+        checkoutPage.termsConditions();
         checkoutPage.confirmOrderButton();
 
     }
     @Then("^Verify that my order placed successfully$")
     public void verify_that_my_order_placed_successfully() throws Throwable {
-        checkoutPage.confirmOrderSuccessfulPage();
+        String exVerificationMSG = nopData.getCellData(allVerification, "VerifyOrder", 2).trim();
+        String verify = checkoutPage.confirmOrderSuccessfulPage();
+       try{
+           Assert.assertEquals(exVerificationMSG, verify);
+           ExtentCucumberAdapter.addTestStepLog("User is able to place an order successfully.");
+       }catch (Exception e){
+           ExtentCucumberAdapter.addTestStepLog("Unable to place an order");
+       }
     }
 
 }

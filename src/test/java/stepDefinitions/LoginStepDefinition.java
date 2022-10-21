@@ -76,6 +76,10 @@ public class LoginStepDefinition {
         loginPage.addToCartButtonClick();
     }
 
+    @When("Click add to cart button")
+    public void click_add_to_cart_button() throws InterruptedException {
+        loginPage.productBrandLinkClk();
+    }
     @And("click add to cart button in details page")
     public void click_add_to_cart_button_in_details_page() throws Throwable {
         loginPage.addToCartForMiniShoppingCart();
