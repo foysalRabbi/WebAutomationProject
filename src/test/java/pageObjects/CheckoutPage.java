@@ -72,13 +72,19 @@ public class CheckoutPage {
         }
     }
     public void firstName(String first){
-        driver.findElement(_firstName).sendKeys(first);
+      WebElement el =  driver.findElement(_firstName);
+      el.clear();
+      el.sendKeys(first);
     }
     public void lastName(String last){
-        driver.findElement(_lastName).sendKeys(last);
+       WebElement el = driver.findElement(_lastName);
+       el.clear();
+       el.sendKeys(last);
     }
     public void emailAddress(String email){
-        driver.findElement(_emailName).sendKeys(email);
+       WebElement el = driver.findElement(_emailName);
+       el.clear();
+       el.sendKeys(email);
     }
     public void companyName(String company){
         driver.findElement(_companyName).sendKeys(company);

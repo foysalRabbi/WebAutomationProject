@@ -30,15 +30,22 @@ public class LoginPage {
 
 
     public void loginMenuClick(){
-        driver.findElement(loginLink).click();
+       WebElement el = driver.findElement(loginLink);
+       el.click();
     }
     public void usernameInput(String str)
     {
-        driver.findElement(username).sendKeys(str);
+
+        WebElement el = driver.findElement(username);
+        el.clear();
+        el.sendKeys(str);
     }
     public void passwordInput(String str)
     {
-        driver.findElement(password).sendKeys(str);
+
+        WebElement el = driver.findElement(password);
+        el.clear();
+        el.sendKeys(str);
     }
     public void loginButtonClick()
     {
