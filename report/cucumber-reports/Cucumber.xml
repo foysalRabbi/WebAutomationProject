@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="2.831">
+    <testcase classname="Check functionality login page feature" name="User able to login by valid credentials" time="2.686">
+        <failure message="" type="java.lang.NullPointerException">
+            <![CDATA[Given A user must visit in Homepage.........................................failed
+When A user enters by valid username and password...........................skipped
+Then Verify that user logged in successfully................................skipped
+
+StackTrace:
+java.lang.NullPointerException
+	at stepDefinitions.LoginStepDefinition.a_user_must_visit_in_homepage(LoginStepDefinition.java:22)
+	at ✽.A user must visit in Homepage(file:///C:/Users/BS926/Desktop/Register-Login/src/test/resources/features/TC_02_Login_Page.feature:4)
+]]>
+        </failure>
+    </testcase>
+</testsuite>
