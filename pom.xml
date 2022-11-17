@@ -97,8 +97,6 @@
       <version>4.1.2</version>
     </dependency>
 
-
-
   </dependencies>
 
   <build>
@@ -121,12 +119,18 @@
         <version>${maven.surefire.version}</version>
         <configuration>
           <includes>
-            <include>**/Test.java</include>
+            <include>**/LoginTest.java</include>
           </includes>
           <parallel>methods</parallel>
           <threadCount>4</threadCount>
           <useUnlimitedThreads>false</useUnlimitedThreads>
         </configuration>
+
+<!--        <configuration>-->
+<!--          <suiteXmlFiles>-->
+<!--            <suiteXmlFile>src/test/ resources/testng.xml</suiteXmlFile>-->
+<!--          </suiteXmlFiles>-->
+<!--        </configuration>-->
 
       </plugin>
 
@@ -157,15 +161,17 @@
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
-        </plugin>
-        <plugin>
+<!--        <plugin>-->
+<!--          <artifactId>maven-compiler-plugin</artifactId>-->
+<!--          <version>3.8.0</version>-->
+<!--        </plugin>-->
+
+<!--        <plugin>-->
+<!--          <artifactId>maven-surefire-plugin</artifactId>-->
+<!--          <version>2.22.1</version>-->
+<!--        </plugin>-->
+
+          <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>

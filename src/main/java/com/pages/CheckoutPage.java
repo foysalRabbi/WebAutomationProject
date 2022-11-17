@@ -32,7 +32,10 @@ public class CheckoutPage {
     final static By _paymentInformation = By.xpath("//*[@id='payment-info-buttons-container']/button");
     final static By _confirmOrder = By.xpath("//*[@id='confirm-order-buttons-container']/button");
     final static By orderSuccessfulMSG = By.xpath("//strong[contains(text(),'Your order has been successfully processed!')]");
-
+    final static By addToCartBtn = By.xpath("//*[@id='add-to-cart-button-4']");
+    final static By detailsView = By.xpath("//*[text()='Manufacturer:']");
+    final static By _productInput= By.xpath("//*[@id='product_enteredQuantity_4']");
+    final static By miniSuccessfulMSG= By.xpath("//*[contains(text(),'(5)')]");
 
     public CheckoutPage(WebDriver driver) {
         this.driver = driver;
@@ -47,11 +50,34 @@ public class CheckoutPage {
     }
     public void addToCartButtonClick() throws InterruptedException {
         Thread.sleep(1000);
-        driver.findElement(addToCartSearch).click();
-    }
-    public void productBrandLinkClk() throws InterruptedException {
-        Thread.sleep(1000);
         driver.findElement(By.linkText("White MacBook Pro 13-inch")).click();
+    }
+
+    public void detailsPageScrollView(){
+        WebElement viewElement = driver.findElement(detailsView);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", viewElement);
+
+    }
+    public void productInput(String numberProduct){
+        driver.findElement(_productInput).clear();
+        driver.findElement(_productInput).sendKeys(numberProduct);
+    }
+    public void productAddToCartButtonClick() throws InterruptedException {
+        Thread.sleep(1000);
+        driver.findElement(addToCartBtn).click();
+        Thread.sleep(3000);
+    }
+    public void scrollToTop() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, 0)");
+    }
+
+    public String verifyNumberOfProductAddInMiniShoppingCart() throws InterruptedException {
+        Thread.sleep(3000);
+        //final By miniSuccessfulMSG= By.xpath("//*[contains(text(),'"+ i +"')]");//*[@id='itemquantity481']
+       // return driver.findElement(By.xpath("//*[contains(text(),'"+ i +"')]")).getText();
+        return driver.findElement((miniSuccessfulMSG)).getText();
     }
     public void addToCartForMiniShoppingCart() throws InterruptedException {
         WebElement element = driver.findElement(addToDetails);
@@ -182,15 +208,18 @@ public class CheckoutPage {
         WebElement el = driver.findElement(By.xpath("//*[@id='payment-method-buttons-container']/button"));
         el.click();
     }
-    public void paymentInformationContinueButton(){
+    public void paymentInformationContinueButton() throws InterruptedException {
+        Thread.sleep(2000);
         WebElement el = driver.findElement(_paymentInformation);
         el.click();
     }
-    public void confirmOrderButton(){
+    public void confirmOrderButton() throws InterruptedException {
+        Thread.sleep(2000);
         WebElement el = driver.findElement(_confirmOrder);
         el.click();
     }
-    public String confirmOrderSuccessfulPage(){
+    public String confirmOrderSuccessfulPage() throws InterruptedException {
+        Thread.sleep(3000);
         WebElement el = driver.findElement(orderSuccessfulMSG);
         return el.getText();
         // return driver.findElement(orderSuccessfulMSG).getText();

@@ -32,15 +32,15 @@ public class LoginStepDefinition {
 
     @Then("Verify that user logged in successfully")
     public void verify_that_user_logged_in_successfully() {
+        String verifyLogin = nopData.getCellData(loginCredentials,"VerifyLogin",2).trim();
         String _validationLoginMSG = loginPage.validationLoginPage();
         try {
-            Assert.assertEquals("Log out", _validationLoginMSG);
+            Assert.assertEquals(verifyLogin, _validationLoginMSG);
             ExtentCucumberAdapter.addTestStepLog("User is able to login successfully");
         } catch (Exception e) {
             ExtentCucumberAdapter.addTestStepLog("user is unable to login successfully");
             Assert.fail("User is unable to register successfully");
         }
     }
-
 
 }

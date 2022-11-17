@@ -1,15 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="2.831">
-    <testcase classname="Check functionality login page feature" name="User able to login by valid credentials" time="2.686">
-        <failure message="" type="java.lang.NullPointerException">
-            <![CDATA[Given A user must visit in Homepage.........................................failed
-When A user enters by valid username and password...........................skipped
-Then Verify that user logged in successfully................................skipped
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="54.45">
+    <testcase classname="Check register functionality in nopStation" name="Verify that user successfully is able to register by fill up in all fields in nopStation" time="12.001">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[contains(text(),'Your registration completed')]&quot;}&#10;  (Session info: chrome=107.0.5304.107)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-5HU3VQS', ip: '172.18.104.174', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\BS926\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56203}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 59243c2ee5156407940a7ce1471b0847&#10;*** Element info: {Using=xpath, value=//*[contains(text(),'Your registration completed')]}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[When take input in all fields on the registration page......................passed
+And Verify that user registered successfully................................failed
 
 StackTrace:
-java.lang.NullPointerException
-	at stepDefinitions.LoginStepDefinition.a_user_must_visit_in_homepage(LoginStepDefinition.java:22)
-	at ✽.A user must visit in Homepage(file:///C:/Users/BS926/Desktop/Register-Login/src/test/resources/features/TC_02_Login_Page.feature:4)
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(),'Your registration completed')]"}
+  (Session info: chrome=107.0.5304.107)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-5HU3VQS', ip: '172.18.104.174', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\BS926\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56203}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 59243c2ee5156407940a7ce1471b0847
+*** Element info: {Using=xpath, value=//*[contains(text(),'Your registration completed')]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.pages.RegistrationPage.validationSuccessfulMessage(RegistrationPage.java:134)
+	at stepDefinitions.RegistrationStepDefinition.verify_that_user_registered_successfully(RegistrationStepDefinition.java:54)
+	at ✽.Verify that user registered successfully(file:///C:/Users/BS926/Desktop/Register-Login/src/test/resources/features/TC_01_Register.feature:5)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Check functionality login page feature" name="User able to login by valid credentials" time="13.204">
+        <system-out>
+            <![CDATA[Given A user must visit in Homepage.........................................passed
+When A user enters by valid username and password...........................passed
+Then Verify that user logged in successfully................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Check that login,Search, mini shopping cart and checkout functionality in nopStation" name="Verify that a user is able to add in mini shopping cart successfully by valid keywords in nopStation" time="18.817">
+        <system-out>
+            <![CDATA[Given A user must visit in Homepage.........................................passed
+When A user enters by valid username and password...........................passed
+Then Verify that user logged in successfully................................passed
+When Take input a product in the search box.................................passed
+And Click search button.....................................................passed
+When Click add to cart button in search page................................passed
+And Click add to cart button in details page................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Check that login,Search, mini shopping cart and checkout functionality in nopStation" name="Verify that user is able to place an order successfully in nopStation" time="10.255">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id ='BillingNewAddress_FirstName']&quot;}&#10;  (Session info: chrome=107.0.5304.107)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-5HU3VQS', ip: '172.18.104.174', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\BS926\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56291}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: dbf060d9fae15f904ae0a506a1b8bc49&#10;*** Element info: {Using=xpath, value=//*[@id ='BillingNewAddress_FirstName']}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[Given A user must visit in Homepage.........................................passed
+When A user enters by valid username and password...........................passed
+Then Verify that user logged in successfully................................passed
+When Click on checkout button in my cart page...............................passed
+Then Click continue button at customer's delivery section in checkout page..failed
+And Click continue button at shipping method section in checkout page.......skipped
+And Click continue button at payment method section in checkout page........skipped
+And Click continue button at confirm order section in checkout page.........skipped
+And Click confirm button at confirm order section in checkout page..........skipped
+Then Verify that my order placed successfully...............................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id ='BillingNewAddress_FirstName']"}
+  (Session info: chrome=107.0.5304.107)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-5HU3VQS', ip: '172.18.104.174', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\BS926\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56291}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dbf060d9fae15f904ae0a506a1b8bc49
+*** Element info: {Using=xpath, value=//*[@id ='BillingNewAddress_FirstName']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.pages.CheckoutPage.firstName(CheckoutPage.java:128)
+	at stepDefinitions.CheckoutStepDefinition.click_continue_button_at_customers_delivery_section_in_checkout_page(CheckoutStepDefinition.java:78)
+	at ✽.Click continue button at customer's delivery section in checkout page(file:///C:/Users/BS926/Desktop/Register-Login/src/test/resources/features/TC_03_Checkout.feature:19)
 ]]>
         </failure>
     </testcase>

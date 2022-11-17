@@ -11,7 +11,7 @@ public class LoginPage {
     private final By username = By.xpath("//*[@id='Username']");
     private final By password = By.xpath("//*[@id ='Password']");
     private final By loginBtn = By.xpath("//button[contains(text(),'Log in')]");
-    private final By validation = By.xpath("//button[contains(text(),'Log out')]");
+    private final By validation = By.xpath("//*[text()='Log out']");
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -43,7 +43,7 @@ public class LoginPage {
     }
     public String validationLoginPage()
     {
-        return driver.findElement(By.xpath("//a[@href='/logout']")).getText();
+        return driver.findElement(validation).getText();
 
     }
 }
