@@ -10,23 +10,23 @@ A robust web automation framework built using Java, Selenium, and Cucumber for b
 
 Before you begin, ensure you have the following tools installed:
 
-- **JDK 11**  
+- JDK 11
   [Download JDK 11](https://adoptium.net/)
-- **Maven 3.6+**  
+- Maven 3.6+  
   [Download Apache Maven](https://maven.apache.org/download.cgi)
-- **IntelliJ IDEA** (or any compatible IDE)  
+- IntelliJ IDEA (or any compatible IDE)  
   [Download IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
 ---
 
 ## 🧰 Technologies & Frameworks Used
 
-- **Java 11** – Core programming language
-- **Selenium WebDriver** – Browser automation
-- **Cucumber** – BDD framework for writing human-readable test cases
-- **Gherkin** – Language for writing feature files (`*.feature`)
-- **JUnit** – Testing framework for running test scenarios
-- **Maven** – Dependency management and build automation
+- Java 11 – Core programming language
+- Selenium WebDriver – Browser automation
+- Cucumber – BDD framework for writing human-readable test cases
+- Gherkin – Language for writing feature files (`*.feature`)
+- JUnit – Testing framework for running test scenarios
+- Maven – Dependency management and build automation
 
 ---
 
@@ -34,37 +34,34 @@ Before you begin, ensure you have the following tools installed:
 
 ## ▶️ Getting Started
 
-1. **Clone the repository:**
+1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/WebAutomationProject.git
    cd WebAutomationProject
    ```
 
-2. **Install dependencies via Maven:**
+2. Install dependencies via Maven:
    ```bash
    mvn clean install
    ```
 
-3. **Open the project in IntelliJ IDEA:**
+3. Open the project in IntelliJ IDEA:
    - Import as a Maven project.
    - Ensure JDK 11 is configured.
 
-4. **Run the tests:**
+4. Run the tests:
    - Run `TestRunner.java` as a JUnit test, or
    - Use Maven command:
      ```bash
      mvn test
      ```
-
----
-
 ## 📝 Best Practices Followed
 
-- **Clean Code**: Meaningful naming, minimal duplication, and single responsibility.
-- **Page Object Model (POM)**: Reusable and maintainable page classes.
-- **Modular Design**: Separation of concerns between steps, pages, and utilities.
-- **Configurable Properties**: Easily change environments or browsers via `config.properties`.
-- **BDD Approach**: Clear, readable scenarios using Gherkin syntax.
+- Clean Code: Meaningful naming, minimal duplication, and single responsibility.
+- Page Object Model (POM): Reusable and maintainable page classes.
+- Modular Design: Separation of concerns between steps, pages, and utilities.
+- Configurable Properties: Easily change environments or browsers via `config.properties`.
+- BDD Approach: Clear, readable scenarios using Gherkin syntax.
 
 ---
 
@@ -81,11 +78,9 @@ For questions or contributions, feel free to reach out:
 
 ---
 
-
-
-✅ **Tips for Maintainers**:
+✅ Tips for Maintainers:
 - Always write descriptive commit messages.
 - Keep feature files and step definitions synchronized.
 - Use tags (`@smoke`, `@regression`) to organize test execution.
 
-Let me know if you'd like to add CI/CD (e.g., GitHub Actions), reporting (Extent/Cucumber Reports), or cloud integration (Sauce Labs, BrowserStack)!
+
