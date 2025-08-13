@@ -27,29 +27,6 @@ Before you begin, ensure you have the following tools installed:
 - Maven – Dependency management and build automation
 
 
-## ▶️ Getting Started
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/WebAutomationProject.git
-   cd WebAutomationProject
-   ```
-
-2. Install dependencies via Maven:
-   ```bash
-   mvn clean install
-   ```
-
-3. Open the project in IntelliJ IDEA:
-   - Import as a Maven project.
-   - Ensure JDK 11 is configured.
-
-4. Run the tests:
-   - Run `TestRunner.java` as a JUnit test, or
-   - Use Maven command:
-     ```bash
-     mvn test
-     ```
 ## 📝 Best Practices Followed
 
 - Clean Code: Meaningful naming, minimal duplication, and single responsibility.
