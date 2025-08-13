@@ -4,7 +4,6 @@
 
 A robust web automation framework built using Java, Selenium, and Cucumber for behavior-driven development (BDD). This project aims to provide a scalable and maintainable structure for automated testing of web applications.
 
----
 
 ## 🛠️ Prerequisites
 
@@ -17,7 +16,6 @@ Before you begin, ensure you have the following tools installed:
 - IntelliJ IDEA (or any compatible IDE)  
   [Download IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
----
 
 ## 🧰 Technologies & Frameworks Used
 
@@ -27,8 +25,6 @@ Before you begin, ensure you have the following tools installed:
 - Gherkin – Language for writing feature files (`*.feature`)
 - JUnit – Testing framework for running test scenarios
 - Maven – Dependency management and build automation
-
----
 
 
 ## ▶️ Getting Started
@@ -62,7 +58,6 @@ Before you begin, ensure you have the following tools installed:
 - Configurable Properties: Easily change environments or browsers via `config.properties`.
 - BDD Approach: Clear, readable scenarios using Gherkin syntax.
 
----
 
 ## 📄 Example Feature 
 
@@ -75,11 +70,6 @@ For questions or contributions, feel free to reach out:
 
 🔗 [LinkedIn: Foysal Rabbi](https://www.linkedin.com/in/foysal-rabbi-362039165/)
 
----
 
-✅ Tips for Maintainers:
-- Always write descriptive commit messages.
-- Keep feature files and step definitions synchronized.
-- Use tags (`@smoke`, `@regression`) to organize test execution.
 
 
