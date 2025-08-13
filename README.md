@@ -30,7 +30,6 @@ Before you begin, ensure you have the following tools installed:
 
 ---
 
----
 
 ## ▶️ Getting Started
 
