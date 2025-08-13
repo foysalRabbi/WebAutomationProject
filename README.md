@@ -1,4 +1,3 @@
-Here's a well-structured and professional `README.md` file for your **WebAutomationProject**:
 
 ```markdown
 # WebAutomationProject
@@ -30,23 +29,6 @@ Before you begin, ensure you have the following tools installed:
 - **Maven** – Dependency management and build automation
 
 ---
-
-## 📁 Project Structure
-
-```
-WebAutomationProject/
-├── src/
-│   ├── test/
-│   │   ├── java/
-│   │   │   └── stepdefinitions/     # Cucumber Step Definition classes
-│   │   │   └── runners/             # Test runners (e.g., TestRunner.java)
-│   │   │   └── utils/               # Utility classes (e.g., Driver, Config)
-│   │   └── resources/
-│   │       └── features/            # Gherkin feature files (*.feature)
-│   │       └── config.properties    # Configuration (e.g., browser, URLs)
-├── pom.xml                          # Maven dependencies and plugins
-└── README.md
-```
 
 ---
 
@@ -86,19 +68,10 @@ WebAutomationProject/
 
 ---
 
-## 📄 Example Feature (Gherkin)
+## 📄 Example Feature 
 
-```gherkin
-Feature: Login Functionality
+Feature: Registration, Login, and Checkout Functionality
 
-  Scenario: Successful login with valid credentials
-    Given I am on the login page
-    When I enter valid username and password
-    And I click the login button
-    Then I should be redirected to the dashboard
-```
-
----
 
 ## 📬 Contact
 
@@ -108,13 +81,7 @@ For questions or contributions, feel free to reach out:
 
 ---
 
-## 📎 License
 
-This project is open-source and available for learning and contribution.  
-(You can add a specific license like MIT or Apache 2.0 if desired.)
-```
-
----
 
 ✅ **Tips for Maintainers**:
 - Always write descriptive commit messages.
